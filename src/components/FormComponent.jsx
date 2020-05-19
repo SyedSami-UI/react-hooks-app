@@ -40,7 +40,7 @@ export default function FormComponent() {
 
     const handleAddNew = () => {
         let newRowData = {
-            rowIndex: Object.keys(rowData).length + 1,
+            rowIndex: Math.floor((Math.random() * 100) + 1),
             rowData: []
         }
         setRowData(rowData => [...rowData, newRowData]);

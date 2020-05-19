@@ -20,6 +20,9 @@ const useStyles = makeStyles({
 export default function ItemTable(props) {
     const classes = useStyles();
 
+    React.useEffect(() => {
+        
+    }, [props]);
 
     return (
         <TableContainer component={Paper}>
@@ -37,7 +40,8 @@ export default function ItemTable(props) {
                 <TableBody>
                     {
                         props.rows.map((rowItem, index) => {
-                            return (<ItemTableRow rowIndex={rowItem.rowIndex} {...props}></ItemTableRow>)
+                            console.log(rowItem);
+                            return (<ItemTableRow key={rowItem.rowIndex} data={rowItem.rowData} rowIndex={rowItem.rowIndex} {...props}></ItemTableRow>)
                         })
                     }
                     
